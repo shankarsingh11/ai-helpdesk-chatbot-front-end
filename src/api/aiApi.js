@@ -1,16 +1,12 @@
 import axios from "axios";
 
-const authAPI = axios.create({
-  baseURL: import.meta.env.VITE_AUTH_API_BASE_URL,
-  timeout: 10000, // 10 Seconds timeout
-  headers: {
-    "Content-Type": "application/json",
-  },
+const aiApi = axios.create({
+  baseURL: `${import.meta.env.VITE_BACKEND_URL}/api/v1/ai/chat`,
 });
 
-// Request Interceptor
 
-// authAPI.interceptors.request.use((config) => {
+// // Request Interceptor
+// aiApi.interceptors.request.use((config) => {
 //   const token = localStorage.getItem("accessToken");
 
 //   if (token) {
@@ -21,7 +17,7 @@ const authAPI = axios.create({
 // });
 
 // // Response Interceptor
-// authAPI.interceptors.response.use(
+// aiApi.interceptors.response.use(
 //   (response) => response,
 //   (error) => {
 //     if (error.response?.status === 401) {
@@ -33,5 +29,4 @@ const authAPI = axios.create({
 //   }
 // );
 
-
-export default authAPI;
+export default aiApi;

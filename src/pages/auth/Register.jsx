@@ -9,6 +9,7 @@ import { registerSchema } from "../../schemas/registerSchema";
 
 import { registerUser } from "../../services/authService";
 
+
 import toast from "react-hot-toast";
 
 export default function Register() {
