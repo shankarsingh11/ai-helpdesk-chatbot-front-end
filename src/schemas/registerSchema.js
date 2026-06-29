@@ -2,18 +2,18 @@ import { z } from "zod";
 
 export const registerSchema = z
   .object({
-    mobile: z
+    name: z
       .string()
-      .min(10, "Mobile number must be 10 digits")
-      .max(10, "Mobile number must be 10 digits"),
-
+      .min(3, "Enter Your full name")
+      .max(50,"Enter your full name"),
+    
     email: z
       .string()
       .email("Invalid email address"),
 
     password: z
       .string()
-      .min(8, "Password must be at least 8 characters")
+      .min(6, "Password must be at least 6 characters")
       .regex(
         /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/,
         "Password must contain uppercase, lowercase and number"
